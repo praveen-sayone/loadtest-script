@@ -2,10 +2,11 @@
 
 Quick guide to run the locust web UI and configure requests.
 
-1. Activate your Python virtual environment (adjust the path as needed):
+1. Create and activate your Python virtual environment (adjust the path as needed):
 
 ```bash
-source venv/bin/activate
+python3 -m venv .venv
+source .venv/bin/activate
 ```
 
 2. Install Locust if you haven't already:
