@@ -1,0 +1,13 @@
+### Virtual env
+.venv/
+__pycache__/
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### VS Code ###
+.vscode/
+

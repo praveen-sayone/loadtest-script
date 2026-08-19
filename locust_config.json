@@ -1,0 +1,14 @@
+{
+  "method": "POST",
+  "path": "",
+  "headers": {
+    "Content-Type": "application/json",
+    "X-TenantSchema": "sandyspetdepot",
+    "x-pos-device-id": "test-device"
+  },
+  "params": {},
+  "json": {
+    "email": "atley.sayone@gmail.com",
+    "password": "asdf1234"
+  }
+}
