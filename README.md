@@ -39,6 +39,26 @@ http://localhost:8089
     be loaded when you start Locust next time. To reset to defaults, stop Locust
     and delete `locust_config.json`.
 
+Docker (containerized) usage
+
+1. Build and run with Docker (uses the `etailpet-locust` service name):
+
+```bash
+docker compose build
+docker compose up -d
+```
+
+2. The Locust web UI will be available at `http://localhost:8089` by default. To change the target host for requests, set the `LOCUST_TARGET_HOST` environment variable in `docker-compose.yml` or pass it when running:
+
+```bash
+LOCUST_TARGET_HOST=https://example.com docker compose up -d
+```
+
+3. Files in this folder are mounted into the container so edits to `locustfile.py` are picked up by restarting the container. The configuration modal saves to `locust_config.json` in the host folder (not included in the image).
+
+Notes:
+- If you need a production image without mounting the local folder, remove the `volumes` entry in `docker-compose.yml` and rebuild the image.
+- The container image is named `etailpet/locust:latest` by default in `docker-compose.yml`.
 - Developer endpoints: the web UI uses two JSON endpoints exposed by the
     running Locust process:
     - `/_custom_config`  (POST) — save a configuration payload (used by the modal)

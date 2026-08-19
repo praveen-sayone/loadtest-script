@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  etailpet-locust:
+    build: .
+    image: etailpet/locust:latest
+    container_name: etailpet-locust
+    ports:
+      - "8089:8089"
+    environment:
+      - LOCUST_TARGET_HOST=http://example.com
+    volumes:
+      - ./:/app
+    restart: unless-stopped
